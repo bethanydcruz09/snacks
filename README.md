@@ -36,19 +36,30 @@
             margin: 0 auto;
         }
     </style>
-    <script>
-        function total(){
-            const dropdown1 = document.querySelector('#snacks')
-            const dropdown2 = document.querySelector('#drinks')
-            const selectedOption1 = dropdown1.option[dropdown1.selectedIndex]
-            const selectedOption2 = dropdown2.option[dropdown2.selectedIndex]
-            const snackPrice = selectedOption1.getAttribute("data-price")
-            const drinkPrice = selectedOption2.getAttribute("data-price")
-            const actualPrice1 = parseFloat(snackPrice)
-            const actualPrice2 = parseFloat(drinkPrice)
-            const formattedPrice = actualPrice1.toFixed(2) + actualPrice2.toFixed(2)
-            const totalPrice = document.getElementById("price").textContent = "Total Price: $"+formattedPrice
-        }
-    </script>
-</body>
+        <script>
+    let formattedPrice = "0.00"; // Global variable
+    
+    function total() {
+        const dropdown1 = document.querySelector('#snacks');
+        const dropdown2 = document.querySelector('#drinks');
+        const selectedOption1 = dropdown1.options[dropdown1.selectedIndex];
+        const selectedOption2 = dropdown2.options[dropdown2.selectedIndex];
+        const snackPrice = selectedOption1.getAttribute("data-price");
+        const drinkPrice = selectedOption2.getAttribute("data-price");
+        const actualPrice1 = parseFloat(snackPrice);
+        const actualPrice2 = parseFloat(drinkPrice);
+        const preprice = actualPrice1 + actualPrice2;
+
+        formattedPrice = preprice.toFixed(2); // Update global variable
+
+        document.getElementById("price").textContent = "Total Price: $" + formattedPrice;
+    }
+
+    function warnings() {
+        alert("Your information has been submitted.");
+        window.location.href = "checkout.html?formattedPrice=" + encodeURIComponent(formattedPrice);
+    }
+</script>
+    </body>
+</html>
 </html>
