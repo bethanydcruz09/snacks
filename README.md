@@ -1,41 +1,36 @@
 <!DOCTYPE html>
-<head>
+<html>
+    <head>
+        <title>Ordering</title>
+    </head>
+    <body>
+        <h1 style="text-align:center">Welcome to my webpage</h1>
+        <div class="body">
+            <h4>Choose a snack:</h4>
+            <select id="snacks" onchange="total()">
+                <option value="None" data-price="0.00">None</option>
+                <option value="Cupcake" data-price="1.50">Cupcake ($1.50)</option>
+                <option value="Chocolate" data-price="2.00">Chocolate ($2.00)</option>
+                <option value="Cookies" data-price="2.50">Cookies ($2.50)</option>
+                <option value="Gummy bears" data-price="3.00">Gummy bears ($3.00)</option>
+            </select>
+            <h4>Choose a drink:</h4>
+            <select id="drinks" onchange="total()">
+                <option value="None" data-price="0.00">None</option>
+                <option value="Smoothie" data-price="0.50">Smoothie ($0.50)</option>
+                <option value="Tea" data-price="1.00">Tea ($1.00)</option>
+                <option value="Milkshake" data-price="1.50">Milkshake ($1.50)</option>
+                <option value="Lemonade" data-price="2.00">Lemonade ($2.00)</option>
+            </select>
+            <p id="price">Total Price: $0.00</p>
+            <button onclick="warnings()"><strong>Submit</strong></button>
+        </div>
+        <style>
+            .body { text-align: center; width: 300px; background-color: Pink; padding: 20px 5px 20px 5px; margin: 0 auto; }
+            .body button { color: LightYellow; }
 
-</head>
 
-<body>
-    <h1 style="text-align:center">Welcome to my webpage</h1>
-    <form id = "test">
-        <h4>Choose a snack:</h4>
-        <break></break>     
-        <select id = "snacks" onchange="total()">
-            <option value="None" data-price="0.00">None</option>
-            <option value="Chips" data-price="1.50">Chips ($1.50)</option>
-            <option value="Cookies" data-price="2.50">Cookies ($2.50)</option>
-            <option value="Chocolate" data-price="3.00">Chocolate ($3.00)</option>
-            <option value="Popcorn" data-price="2.00">Popcorn ($2.00)</option>
-        </select>
-        <h4>Choose a drink:</h4>
-        <break></break>
-        <select id = "drinks" onchange="total()">
-            <option value="None" data-price="0.00">None</option>
-            <option value="Water" data-price="1.50">Water ($1.50)</option>
-            <option value="Pepsi" data-price="1.00">Pepsi ($1.00)</option>
-            <option value="Lemonade" data-price="2.00">Lemonade ($2.00)</option>
-            <option value="Coca Cola" data-price="0.50">Coca Cola ($0.50)</option>
-        </select>
-        <p id = "price">Total Price: $0.00</p>
-    </form>
-    <style>
-        form{
-            text-align: center;
-            width: 250px;
-            background-color: pink;
-            /*top right bottom left*/
-            padding: 15px 5px 15px 5px; 
-            margin: 0 auto;
-        }
-    </style>
+        </style>
         <script>
     let formattedPrice = "0.00"; // Global variable
     
@@ -61,5 +56,4 @@
     }
 </script>
     </body>
-</html>
 </html>
